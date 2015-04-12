@@ -10,7 +10,7 @@ main(){
   
   var server = new Server();
   var auth = new Auth(new LocationWrapper(), server, window);
-  querySelector("#signin_button").onClick.listen((_)=> auth.login());
+  //querySelector("#signin_button").onClick.listen((_)=> auth.login());
 }
 
 readmore(){
