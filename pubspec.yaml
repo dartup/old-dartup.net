@@ -1,21 +1,16 @@
-name: dartup
+name: dartup_net
 author: Ole Martin Gjersvik <olem@olem.org>
-description: Dart hosting platform on AWS
+description: The main website fro Dartup
 homepage: dartup.net
 environment:
   sdk: '>=1.8.3 <2.0.0'
 dependencies:
   bootstrap: any
   browser: any
-  github: any
   http: any
-  redstone: any
-dev_dependencies:
-  mock: any
-  unittest: any
 transformers:
 - $dart2js:
     minify: true
 - bootstrap:
     url: //maxcdn.bootstrapcdn.com/bootstrap/{{version}}
-    version: 3.2.0    
+    version: 3.2.0
