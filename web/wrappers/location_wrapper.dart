@@ -4,8 +4,8 @@ import "dart:html" hide Location;
 
 import "../client_lib.dart";
 
-class LocationWrapper extends Location{
-  
+class LocationWrapper extends Location {
+
   // TODO: implement currentUri
   @override
   Uri get currentUri => Uri.base;
