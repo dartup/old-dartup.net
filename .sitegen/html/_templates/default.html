@@ -10,7 +10,6 @@
 
     <link rel="stylesheet" href="{{_page.relative_to_root}}/packages/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="{{_page.relative_to_root}}/packages/bootstrap/css/bootstrap-theme.css">
-    <link href="{{_page.relative_to_root}}/vendor/auth-buttons.css" rel="stylesheet">
 </head>
 
 <body>
@@ -25,7 +24,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#">
-                <img style="margin: -10px -10px" alt="Dartup" src="img/logo.svg" height="40
+                <img style="margin: -10px -10px" alt="Dartup" src="{{_page.relative_to_root}}/logo.svg" height="40
             px">
             </a>
         </div>
@@ -60,9 +59,6 @@
         </div>
     </div>
 </footer>
-
-<script type="application/dart" src="client.dart"></script>
-<script src="packages/browser/dart.js"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="packages/bootstrap/js/bootstrap.js"></script>
