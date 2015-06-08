@@ -8,6 +8,8 @@ dependencies:
   bootstrap: any
   browser: any
   http: any
+dev_dependencies:
+  sitegen: any
 transformers:
 - $dart2js:
     minify: true
