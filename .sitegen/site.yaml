@@ -1,0 +1,3 @@
+site_options:
+  generator: SiteGen
+  site_name: Sample

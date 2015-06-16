@@ -8,8 +8,8 @@
 
     <title>{{title}}</title>
 
-    <link rel="stylesheet" href="{{_page.relative_to_root}}/packages/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="{{_page.relative_to_root}}/packages/bootstrap/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="{{_page.relative_to_root}}packages/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="{{_page.relative_to_root}}packages/bootstrap/css/bootstrap-theme.css">
 </head>
 
 <body>
@@ -23,8 +23,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">
-                <img style="margin: -10px -10px" alt="Dartup" src="{{_page.relative_to_root}}/logo.svg" height="40
+            <a class="navbar-brand" href="{{_page.relative_to_root}}index.html">
+                <img style="margin: -10px -10px" alt="Dartup" src="{{_page.relative_to_root}}logo.svg" height="40
             px">
             </a>
         </div>
@@ -32,10 +32,8 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
+                <li><a href="{{_page.relative_to_root}}alpha.html">Alpha Hosting</a></li>
                 <li><a href="http://blog.dartup.net/">Blog</a></li>
-                <!-- <li><a id="signin_button" class="btn-auth btn-github" href="#">
-                  Sign in with <b>GitHub</b>
-                </a></li> -->
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
