@@ -6,8 +6,8 @@ title: Dartup Dart shared hosting alpha.
     <ul>
         <li>A public git url to download your project from. It may be from any service like
             <a href="https://github.com/">GitHub</a> or <a href="https://bitbucket.org/">Bitbucket</a>. The only requirement
-            is that git must be able to clone it wit no authentication.</li>
-        <li>It must use the dartup package so that I can change how the app and the service interact.</li>
+            is that git must be able to clone it with no authentication.</li>
+        <li>It must use the <a href="https://pub.dartlang.org/packages/dartup">dartup</a> package so that I can change how the app and the service interact.</li>
         <li>The main file must bin/server.dart.</li>
         <li>The main file must work without arguments.</li>
         <li>And the project can't use any build tools, nothing but a simple pub get. (You can work around that by starting
@@ -25,25 +25,25 @@ title: Dartup Dart shared hosting alpha.
         <li>Any environmental variables you want to pass along to your application. Like database credentials.</li>
         <li>If it's evil a short description on the horror it will unleash.</li>
     </ul>
-    <h3>How to sign up.</h3>
-    For good applications I am look for what types of applications you might want to run in a shared host environment. The
-    main focus for me is to get some more real world application to test the platform with. I want to spend my time making
-    the platform not making fake application that may or may not be relevant for what you want. The second is that seeing
-    what you're actually want to run will inform the design and choices so that Dartup can be find the correct balance
-    many apps on a box and useful performance.<br>
+    <h3>Good versus evil.</h3>
+    For good applications I am look for what types of applications you might want to run in a shared host environment.
+    The main focus for me is to get some more real world application to test the platform with. I want to spend my time
+    making the platform not making fake application. That may or may not be relevant for what you want. The second is
+    that seeing what you're actually want to run will inform the design and choices so that Dartup can be find the
+    correct balance. Between many apps on a box and useful performance.<br>
     A few notes for good apps:
     <ul>
-        <li>Don’t put any code on Dartup that is in any way secret.</li>
-        <li>Don’t link your application to any data you are afraid of or is private.</li>
+        <li>Only put code on Dartup that is not open to the world.</li>
+        <li>Don’t flow any sensitive information through the Dartup service.</li>
         <li>In short Dartup alpha will be a hostile environment for your application. Se evil.</li>
         <li>Play nice with the other applications on server and the box it self. If you want to be evil then make an evil
             app. You can have both.</li>
     </ul>
-    I am also looking for evil application to test and make the platform more resilient against bad actors and bad days. I
-    know that when i was a young programmer writing php applications in productions it happened that i did some horrible
-    stuff. (It was an accident i swear.) So Dartup need some ways to protect itself against all sorts of bad stuff. Evil
-    apps will only be runned when i want to test the platform so do not hold back, 1 sec and the instance crashes is a good
-    test. <br>
+    I am also looking for evil application to test and make the platform more resilient. Against bad actors and bad
+    days. I know that when i was a young programmer writing php applications in production. Some stuff happen that i am
+    not proud of. (It was an accident i swear.) So Dartup need some ways to protect itself against all sorts of bad
+    stuff. Evil apps will only be runned when i want to test the platform so do not hold back, 1 sec and the instance
+    crashes is a good test. <br>
     Ideas for evil stuff:
     <ul>
         <li>Try an use up one shared resource. (I am looking at you forkbomb.)</li>
@@ -60,15 +60,16 @@ title: Dartup Dart shared hosting alpha.
     <strong>Breaking of these rules will blacklist you for any future Dartup alpha or beta tests.</strong>
     <h3>Contact info.</h3>
     <p>I am <a href="https://plus.google.com/+OleMartinGjersvik">+OleMartinGjersvik</a> on Google+<br>
-    I am jerweb over at <a href="">dartlang.slack.com</a> You can get an invite at
+    I am <strong>jerweb</strong> over at <a href="https://dartlang.slack.com">dartlang.slack.com</a> You can get an invite at
     <a href="https://dartlang-slack.herokuapp.com/">https://dartlang-slack.herokuapp.com/</a>.<br>
-    Or just mail me at <a href="mailto:olem@olem.org"></a>olem@olem.org.</p>
+    Or just mail me at <a href="mailto:olem@olem.org">olem@olem.org.</a></p>
     <h3>Q&A</h3>
     <p><strong>What databases/datastores are supported?</strong><br>
-        None yet. But you can host mongoDB for free over at https://mongolab.com/ and if you select Amazone Web Servies
-        eu-west-1 Irland region the database will be nice and close to Dartup alpha. If you search around you will find
-        lots of services that offer free and or cheap database hosting on amazon. And there is always firebase.</p>
-    <p><strong>I do not feel comfortable just telling you my database credentials.</strong>
+        None yet. But you can host mongoDB for free over at <a href="https://mongolab.com/">mongolab.com</a> and if you
+        select Amazon Web Servies EU (Ireland) region the database will be nice and close to Dartup alpha. If you
+        search around you will find lots of services that offer free and or cheap database hosting on Amazon. And there
+        is always <a href="https://www.firebase.com/">firebase</a>.</p>
+    <p><strong>I do not feel comfortable just telling you my database credentials.</strong><br>
         Then don’t. This extremely early alpha and that there is a good hint that your application is not meant for Dartup
         yet. I hope to see your business in the future when the platform is a bit more secure and stable.</p>
     <p><strong>What do i do if i want to change some settings?</strong><br>
@@ -78,6 +79,6 @@ title: Dartup Dart shared hosting alpha.
         time. I will look into it but in the short term there will be a lot of nuking.</p>
     <p><strong>How do i keep updated on Dartup?</strong><br>
     For low traffic about once a week the <a href="http://blog.dartup.net/">blog.dartup.net</a>.<br>
-    For a bit more follow me at <a href="https://plus.google.com/+OleMartinGjersvik">google+</a>.<br>
-    Or chat wit me over at dartlang.slack.com</p>
+    For a bit more follow me at <a href="https://plus.google.com/+OleMartinGjersvik">Google+</a>.<br>
+    Or chat with me over at <a href="https://dartlang.slack.com">dartlang.slack.com</a></p>
 </article>
