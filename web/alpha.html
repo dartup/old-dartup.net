@@ -35,71 +35,65 @@
 </nav>
 <article class="container">
     <h1>Dart shared hosting alpha.</h1>
-    <h3>Requirements for alpha access:</h3>
+    <p>I asked the community what service they first wanted Dartup to deliver
+        and shared hosting won by a landslide. So to that goal i invite you to
+        join me in making Dartup the best host for development and small
+        projects.
+    </p>
+    <p>Now at the beginning i focus mostly on getting a number of projects
+        working on a single server. Luxury  items like a control panel is lite
+        later. So its mostly a you give me a git url and i will pull and host
+        it. I also have written a <a href="https://pub.dartlang.org/packages/dartup">dartup package</a> that will make it easy to have
+        the same server running on Dartup and locally.
+    </p>
+    <h3>Hello world example</h3>
+    <pre>
+import 'dart:io';
+import 'package:dartup/dartup.dart' as dartup;
+main() async{
+  // Gets a HttpServer. We just use the default values localhost:8080 for local runs.
+  HttpServer server = await dartup.bind();
+  server.listen((HttpRequest req){
+    req.response.write('Hello world');
+    req.response.close();
+  });
+}
+    </pre>
+    You can find a more complete example over at: <a href="https://github.com/dartup/hello">https://github.com/dartup/hello</a>
+    <h3>Terms of service:</h3>
+    <p><strong>Respect that is alpha.</strong> This is very early alpha so it
+        not feature complete stable or secure. So don't expect it to be. So if
+        you use Dartup for private project or anything even close to production
+        it on your own risk. As its not really fit for any purpose.
+    </p>
+    <h3>Technical requirements:</h3>
+    As this is an early alpha your application need to make some small adaptations:
     <ul>
-        <li>A public git url to download your project from. It may be from any service like
-            <a href="https://github.com/">GitHub</a> or <a href="https://bitbucket.org/">Bitbucket</a>. The only requirement
-            is that git must be able to clone it with no authentication.</li>
-        <li>It must use the <a href="https://pub.dartlang.org/packages/dartup">dartup</a> package so that I can change how the app and the service interact.</li>
-        <li>The main file must bin/server.dart.</li>
-        <li>The main file must work without arguments.</li>
-        <li>And the project can't use any build tools, nothing but a simple pub get. (You can work around that by starting
-            subprocesses from sever.dart if you really want to.)</li>
-        <li>The service will update your code whenever it feels like it. </li>
-        <li>It will try to be up but will fail miserable.</li>
+        <li>The code must be publicly available so that I can git clone it.</li>
+        <li>You should use the
+            <a href="https://pub.dartlang.org/packages/dartup">Dartup package</a>
+            to get port information.</li>
+        <li>The service right now starts bin/server.dart without arguments.</li>
+        <li>At this point there is no support for build tools.</li>
     </ul>
-    All or most of these requirements will fall away in time. But to get a quick start your app must adapt to the platform.
     <h3>How to sign up.</h3>
     You only need to contact me with the following information:
     <ul>
         <li>The name you want for your project. name.dartup.io.</li>
         <li>The git url to your project.</li>
-        <li>Whether it's good or evil. See below. </li>
         <li>Any environmental variables you want to pass along to your application. Like database credentials.</li>
-        <li>If it's evil a short description on the horror it will unleash.</li>
     </ul>
-    <h3>Good versus evil.</h3>
-    For good applications I am look for what types of applications you might want to run in a shared host environment.
-    The main focus for me is to get some more real world application to test the platform with. I want to spend my time
-    making the platform not making fake application. That may or may not be relevant for what you want. The second is
-    that seeing what you're actually want to run will inform the design and choices so that Dartup can be find the
-    correct balance. Between many apps on a box and useful performance.<br>
-    A few notes for good apps:
-    <ul>
-        <li>Only put code on Dartup that is public.</li>
-        <li>Don’t flow any sensitive information through the Dartup service.</li>
-        <li>In short Dartup alpha will be a hostile environment for your application. Se evil.</li>
-        <li>Play nice with the other applications on server and the box it self. If you want to be evil then make an evil
-            app. You can have both.</li>
-    </ul>
-    I am also looking for evil application to test and make the platform more resilient. Against bad actors and bad
-    days. I know that when i was a young programmer writing php applications in production. Some stuff happen that i am
-    not proud of. (It was an accident i swear.) So Dartup need some ways to protect itself against all sorts of bad
-    stuff. Evil apps will only be runned when i want to test the platform so do not hold back, 1 sec and the instance
-    crashes is a good test. <br>
-    Ideas for evil stuff:
-    <ul>
-        <li>Try an use up one shared resource. (I am looking at you forkbomb.)</li>
-        <li>Try to get data or information from other apps running on the same box.</li>
-        <li>Try to take over the box in some way. </li>
-        <li>Any other evil thing that will make it a sad day for the other users of your box.</li>
-    </ul>
-    But there will be some rules:
-    <ul>
-        <li>You must limit your actions to the box you are running on. To run network security tests I need special
-            permissions from Amazon. So later perhaps.</li>
-        <li>If you take control of the box or other apps. Do not do anything more serious than (Haha got you.)</li>
-    </ul>
-    <strong>Breaking of these rules will blacklist you for any future Dartup alpha or beta tests.</strong>
+
     <h3>Contact info.</h3>
     <p>I am <a href="https://plus.google.com/+OleMartinGjersvik">+OleMartinGjersvik</a> on Google+<br>
     I am <strong>jerweb</strong> over at <a href="https://dartlang.slack.com">dartlang.slack.com</a> You can get an invite at
     <a href="https://dartlang-slack.herokuapp.com/">https://dartlang-slack.herokuapp.com/</a>.<br>
-    Or just mail me at <a href="mailto:olem@olem.org">olem@olem.org.</a></p>
+    Or just mail me at <a href="mailto:olem@olem.org">olem@olem.org.</a>
+    </p>
     <h3>Q&A</h3>
     <p><strong>What databases/datastores are supported?</strong><br>
-        None yet. But you can host mongoDB for free over at <a href="https://mongolab.com/">mongolab.com</a> and if you
-        select Amazon Web Servies EU (Ireland) region the database will be nice and close to Dartup alpha. If you
+        None yet. But you can host MongoDB for free over at <a href="https://mongolab.com/">mongolab.com</a> and if you
+        select Amazon Web Services EU (Ireland) region the database will be nice and close to Dartup alpha. If you
         search around you will find lots of services that offer free and or cheap database hosting on Amazon. And there
         is always <a href="https://www.firebase.com/">firebase</a>.</p>
     <p><strong>I do not feel comfortable just telling you my database credentials.</strong><br>
@@ -111,9 +105,9 @@
         Yes and no. You have full read write access to your own home directory. But what you store is not persistent over
         time. I will look into it but in the short term there will be a lot of nuking.</p>
     <p><strong>How do i keep updated on Dartup?</strong><br>
-    For low traffic about once a week the <a href="http://blog.dartup.net/">blog.dartup.net</a>.<br>
-    For a bit more follow me at <a href="https://plus.google.com/+OleMartinGjersvik">Google+</a>.<br>
-    Or chat with me over at <a href="https://dartlang.slack.com">dartlang.slack.com</a></p>
+        For low traffic about once a week the <a href="http://blog.dartup.net/">blog.dartup.net</a>.<br>
+        For a bit more follow me at <a href="https://plus.google.com/+OleMartinGjersvik">Google+</a>.<br>
+        Or chat with me over at <a href="https://dartlang.slack.com">dartlang.slack.com</a></p>
 </article>
 <footer class="container well" style="margin-top: 30px; margin-bottom: 20px">
     <div class="row">
